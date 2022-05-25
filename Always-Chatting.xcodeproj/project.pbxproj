@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED191E4E283E9A5200291705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED191E4D283E9A5200291705 /* GoogleService-Info.plist */; };
+		ED191E51283E9C9900291705 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ED191E50283E9C9900291705 /* FirebaseAnalytics */; };
+		ED191E53283E9C9900291705 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ED191E52283E9C9900291705 /* FirebaseAuth */; };
+		ED191E55283E9C9900291705 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ED191E54283E9C9900291705 /* FirebaseFirestore */; };
+		ED191E57283E9C9900291705 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ED191E56283E9C9900291705 /* FirebaseStorage */; };
 		ED6F499027F402D700078080 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F498F27F402D700078080 /* RegisterViewController.swift */; };
 		ED6F499127F402D700078080 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F498F27F402D700078080 /* RegisterViewController.swift */; };
 		ED6F499227F402D700078080 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F498F27F402D700078080 /* RegisterViewController.swift */; };
@@ -23,16 +28,7 @@
 		EDB64E4727F2682F00AFFB02 /* Always_ChattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB64E4627F2682F00AFFB02 /* Always_ChattingTests.swift */; };
 		EDB64E5127F2682F00AFFB02 /* Always_ChattingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB64E5027F2682F00AFFB02 /* Always_ChattingUITests.swift */; };
 		EDB64E5327F2682F00AFFB02 /* Always_ChattingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB64E5227F2682F00AFFB02 /* Always_ChattingUITestsLaunchTests.swift */; };
-		EDB64E6027F2729200AFFB02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB64E5F27F2729200AFFB02 /* GoogleService-Info.plist */; };
-		EDB64E6127F2729200AFFB02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB64E5F27F2729200AFFB02 /* GoogleService-Info.plist */; };
-		EDB64E6227F2729200AFFB02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB64E5F27F2729200AFFB02 /* GoogleService-Info.plist */; };
-		EDB64E6527F2752700AFFB02 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EDB64E6427F2752700AFFB02 /* FirebaseAnalytics */; };
-		EDB64E6727F2752700AFFB02 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EDB64E6627F2752700AFFB02 /* FirebaseAuth */; };
-		EDB64E6927F2752700AFFB02 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EDB64E6827F2752700AFFB02 /* FirebaseFirestore */; };
 		EDBFD1F4280E1F42007169A7 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBFD1F3280E1F42007169A7 /* ConversationViewController.swift */; };
-		EDFD24B1280A7E4200CE10CE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EDFD24B0280A7E4200CE10CE /* FirebaseAuth */; };
-		EDFD24B3280A7E4200CE10CE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EDFD24B2280A7E4200CE10CE /* FirebaseFirestore */; };
-		EDFD24B5280A7E4200CE10CE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EDFD24B4280A7E4200CE10CE /* FirebaseStorage */; };
 		EDFD24B9280A92A500CE10CE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD24B8280A92A500CE10CE /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED191E4D283E9A5200291705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED6F498F27F402D700078080 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		ED6F499327F402E300078080 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED8618E2280B595D007A8718 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -70,7 +67,6 @@
 		EDB64E4C27F2682F00AFFB02 /* Always-ChattingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Always-ChattingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB64E5027F2682F00AFFB02 /* Always_ChattingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Always_ChattingUITests.swift; sourceTree = "<group>"; };
 		EDB64E5227F2682F00AFFB02 /* Always_ChattingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Always_ChattingUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EDB64E5F27F2729200AFFB02 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDBFD1F3280E1F42007169A7 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		EDFD24B8280A92A500CE10CE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,12 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDB64E6527F2752700AFFB02 /* FirebaseAnalytics in Frameworks */,
-				EDB64E6727F2752700AFFB02 /* FirebaseAuth in Frameworks */,
-				EDB64E6927F2752700AFFB02 /* FirebaseFirestore in Frameworks */,
-				EDFD24B3280A7E4200CE10CE /* FirebaseFirestore in Frameworks */,
-				EDFD24B1280A7E4200CE10CE /* FirebaseAuth in Frameworks */,
-				EDFD24B5280A7E4200CE10CE /* FirebaseStorage in Frameworks */,
+				ED191E51283E9C9900291705 /* FirebaseAnalytics in Frameworks */,
+				ED191E57283E9C9900291705 /* FirebaseStorage in Frameworks */,
+				ED191E53283E9C9900291705 /* FirebaseAuth in Frameworks */,
+				ED191E55283E9C9900291705 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +100,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED191E4F283E9C6000291705 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED6F498C27F4020D00078080 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +142,7 @@
 				EDB64E4527F2682F00AFFB02 /* Always-ChattingTests */,
 				EDB64E4F27F2682F00AFFB02 /* Always-ChattingUITests */,
 				EDB64E2D27F2682D00AFFB02 /* Products */,
+				ED191E4F283E9C6000291705 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,7 +159,7 @@
 		EDB64E2E27F2682D00AFFB02 /* Always-Chatting */ = {
 			isa = PBXGroup;
 			children = (
-				EDB64E5F27F2729200AFFB02 /* GoogleService-Info.plist */,
+				ED191E4D283E9A5200291705 /* GoogleService-Info.plist */,
 				EDB64E2F27F2682D00AFFB02 /* AppDelegate.swift */,
 				EDB64E3127F2682D00AFFB02 /* SceneDelegate.swift */,
 				ED6F498D27F4021B00078080 /* Model */,
@@ -204,12 +206,10 @@
 			);
 			name = "Always-Chatting";
 			packageProductDependencies = (
-				EDB64E6427F2752700AFFB02 /* FirebaseAnalytics */,
-				EDB64E6627F2752700AFFB02 /* FirebaseAuth */,
-				EDB64E6827F2752700AFFB02 /* FirebaseFirestore */,
-				EDFD24B0280A7E4200CE10CE /* FirebaseAuth */,
-				EDFD24B2280A7E4200CE10CE /* FirebaseFirestore */,
-				EDFD24B4280A7E4200CE10CE /* FirebaseStorage */,
+				ED191E50283E9C9900291705 /* FirebaseAnalytics */,
+				ED191E52283E9C9900291705 /* FirebaseAuth */,
+				ED191E54283E9C9900291705 /* FirebaseFirestore */,
+				ED191E56283E9C9900291705 /* FirebaseStorage */,
 			);
 			productName = "Always-Chatting";
 			productReference = EDB64E2C27F2682D00AFFB02 /* Always-Chatting.app */;
@@ -303,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB64E3C27F2682F00AFFB02 /* LaunchScreen.storyboard in Resources */,
-				EDB64E6027F2729200AFFB02 /* GoogleService-Info.plist in Resources */,
+				ED191E4E283E9A5200291705 /* GoogleService-Info.plist in Resources */,
 				EDB64E3927F2682F00AFFB02 /* Assets.xcassets in Resources */,
 				EDB64E3727F2682D00AFFB02 /* Main.storyboard in Resources */,
 			);
@@ -313,7 +313,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDB64E6127F2729200AFFB02 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +320,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDB64E6227F2729200AFFB02 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,32 +694,22 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EDB64E6427F2752700AFFB02 /* FirebaseAnalytics */ = {
+		ED191E50283E9C9900291705 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EDB64E6327F2752700AFFB02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		EDB64E6627F2752700AFFB02 /* FirebaseAuth */ = {
+		ED191E52283E9C9900291705 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EDB64E6327F2752700AFFB02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		EDB64E6827F2752700AFFB02 /* FirebaseFirestore */ = {
+		ED191E54283E9C9900291705 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EDB64E6327F2752700AFFB02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		EDFD24B0280A7E4200CE10CE /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EDB64E6327F2752700AFFB02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		EDFD24B2280A7E4200CE10CE /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EDB64E6327F2752700AFFB02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		EDFD24B4280A7E4200CE10CE /* FirebaseStorage */ = {
+		ED191E56283E9C9900291705 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EDB64E6327F2752700AFFB02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;

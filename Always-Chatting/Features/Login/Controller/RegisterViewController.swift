@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  Always-Chatting
 //
 //  Created by Fernando Tello on 29/03/22.
@@ -8,35 +8,44 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Login"
+        title = "Register"
+        
         // Do any additional setup after loading the view.
     }
     
     
-    @IBAction func btnLogingPressed(_ sender: UIButton) {
+    @IBAction func registerBtnPressed(_ sender: UIButton) {
+        register()
+    }
+    
+}
+
+//MARK: Functions
+extension RegisterViewController{
+    
+    func register(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
         
-//        if let email = emailTextField.text , let password = passwordTextField.text {
-//            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-//                if let e = error {
-//                    print(e)
-//                    self.showErrorMessage(e)
-//                } else {
+        if let email = emailTextField.text , let password = passwordTextField.text {
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e)
+                    self.showErrorMessage(e)
+                } else {
                     // This is to get the SceneDelegate object from your view controller
                     // then call the change root view controller function to change to main tab bar
                     (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
-//                }
-//            }
-//        }
-        
+                }
+            }
+        }
     }
     
     func showErrorMessage(_ error:Error){

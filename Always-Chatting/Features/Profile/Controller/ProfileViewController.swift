@@ -55,6 +55,17 @@ class ProfileViewController: UIViewController {
         loadProfileInfo()
     }
     
+    
+    @IBAction func LogOutBtnPressed(_ sender: UIButton) {
+        logOut(sender)
+    }
+
+}
+
+
+// MARK: - Functions
+extension ProfileViewController {
+    
     func loadProfilePhoto(){
         let pathReference = storage.reference(withPath: photoPath)
         print("******pathReference******* \(pathReference)")
@@ -106,12 +117,10 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @IBAction func LogOutBtnPressed(_ sender: UIButton) {
-        
+    func logOut(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginNavController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
-        
-        
+
         do {
             try Auth.auth().signOut()
             //            navigationController?.popToRootViewController(animated: true)
@@ -121,10 +130,8 @@ class ProfileViewController: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-        
-        
-        
     }
+    
     
     
     /*

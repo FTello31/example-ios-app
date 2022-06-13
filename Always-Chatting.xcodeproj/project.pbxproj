@@ -107,14 +107,70 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ED6F498C27F4020D00078080 /* Controller */ = {
+		ED3597E72856EF5A00443937 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				ED3597EE2856F77800443937 /* Controller */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		ED3597E82856EFF900443937 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				ED3597EB2856F04A00443937 /* Login */,
+				ED3597EA2856F02300443937 /* Chat */,
+				ED3597E92856F01F00443937 /* Status */,
+				ED3597E72856EF5A00443937 /* Profile */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		ED3597E92856F01F00443937 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
+		ED3597EA2856F02300443937 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				ED3597ED2856F76D00443937 /* Controller */,
+				ED6F498D27F4021B00078080 /* Model */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		ED3597EB2856F04A00443937 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				ED3597EC2856F74D00443937 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		ED3597EC2856F74D00443937 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ED6F498F27F402D700078080 /* RegisterViewController.swift */,
+				ED6F499327F402E300078080 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ED3597ED2856F76D00443937 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				EDBFD1F3280E1F42007169A7 /* ConversationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ED3597EE2856F77800443937 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				EDFD24B8280A92A500CE10CE /* ProfileViewController.swift */,
-				EDB64E3327F2682D00AFFB02 /* ViewController.swift */,
-				ED6F498F27F402D700078080 /* RegisterViewController.swift */,
-				ED6F499327F402E300078080 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -125,14 +181,6 @@
 				ED8618E2280B595D007A8718 /* User.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		ED6F498E27F4022100078080 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EDB64E3527F2682D00AFFB02 /* Main.storyboard */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		EDB64E2327F2682D00AFFB02 = {
@@ -162,9 +210,9 @@
 				ED191E4D283E9A5200291705 /* GoogleService-Info.plist */,
 				EDB64E2F27F2682D00AFFB02 /* AppDelegate.swift */,
 				EDB64E3127F2682D00AFFB02 /* SceneDelegate.swift */,
-				ED6F498D27F4021B00078080 /* Model */,
-				ED6F498E27F4022100078080 /* View */,
-				ED6F498C27F4020D00078080 /* Controller */,
+				ED3597E82856EFF900443937 /* Features */,
+				EDB64E3527F2682D00AFFB02 /* Main.storyboard */,
+				EDB64E3327F2682D00AFFB02 /* ViewController.swift */,
 				EDB64E3827F2682F00AFFB02 /* Assets.xcassets */,
 				EDB64E3A27F2682F00AFFB02 /* LaunchScreen.storyboard */,
 				EDB64E3D27F2682F00AFFB02 /* Info.plist */,

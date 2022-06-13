@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class ConversationViewController: UITableViewController {
+class ConversationViewController:UITableViewController {
     
     var conversations: [String] = []
     
@@ -21,36 +21,14 @@ class ConversationViewController: UITableViewController {
         
         loadConversation()
     }
-    
-    
-    //MARK: - TableView Datasource Methods
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        conversations.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationItemCell", for: indexPath)
-        
-        let item = conversations[indexPath.row]
-        
-        cell.textLabel?.text = item
-        
-        
-        return cell
-    }
-    
-    //MARK: - TableView Delegate Methods
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(conversations[indexPath.row])
-        print(indexPath.row)
-    }
+}
+
+
+// MARK: - Functions
+extension ConversationViewController{
     
     //MARK: - Data Manipulation Methods
-    
     func loadConversation(){
-        
         db.collection("conversations").getDocuments() { (QuerySnapshot, err) in
             self.conversations = []
             if let err = err {
@@ -59,8 +37,8 @@ class ConversationViewController: UITableViewController {
             else {
                 for document in QuerySnapshot!.documents {
                     let documentID = document.documentID
-                    let date = document.get("date") as! Timestamp
-                    let name = document.get("name") as! String
+                    let date = document.get("date") as? Timestamp
+                    let name = document.get("name") as? String ?? "name default"
                     
                     print(documentID)
                     print(name)
@@ -110,4 +88,29 @@ class ConversationViewController: UITableViewController {
      }
      */
     
+}
+
+// MARK: - Table View
+extension ConversationViewController {
+    
+    // Datasource Methods
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        conversations.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationItemCell", for: indexPath)
+        let item = conversations[indexPath.row]
+        
+        cell.textLabel?.text = item
+        
+        return cell
+    }
+    
+    //Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(conversations[indexPath.row])
+        print(indexPath.row)
+    }
 }

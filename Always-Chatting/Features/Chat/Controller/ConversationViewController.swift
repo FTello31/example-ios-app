@@ -17,25 +17,23 @@ class ConversationViewController:UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        // tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         
         loadConversation()
     }
 }
 
-
 // MARK: - Functions
-extension ConversationViewController{
+extension ConversationViewController {
     
-    //MARK: - Data Manipulation Methods
-    func loadConversation(){
-        db.collection("conversations").getDocuments() { (QuerySnapshot, err) in
+    // MARK: - Data Manipulation Methods
+    func loadConversation() {
+        db.collection("conversations").getDocuments() { (querySnapshot, err) in
             self.conversations = []
             if let err = err {
                 print("Error getting documents : \(err)")
-            }
-            else {
-                for document in QuerySnapshot!.documents {
+            } else {
+                for document in querySnapshot!.documents {
                     let documentID = document.documentID
                     let date = document.get("date") as? Timestamp
                     let name = document.get("name") as? String ?? "name default"
@@ -92,7 +90,6 @@ extension ConversationViewController{
 
 // MARK: - Table View
 extension ConversationViewController {
-    
     // Datasource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         conversations.count
@@ -101,13 +98,11 @@ extension ConversationViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationItemCell", for: indexPath)
         let item = conversations[indexPath.row]
-        
         cell.textLabel?.text = item
-        
         return cell
     }
     
-    //Delegate Methods
+    // Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(conversations[indexPath.row])

@@ -16,10 +16,8 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Register"
-        
         // Do any additional setup after loading the view.
     }
-    
     
     @IBAction func registerBtnPressed(_ sender: UIButton) {
         register()
@@ -27,18 +25,18 @@ class RegisterViewController: UIViewController {
     
 }
 
-//MARK: Functions
+// MARK: Functions
 extension RegisterViewController{
     
-    func register(){
+    func register() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
         
         if let email = emailTextField.text , let password = passwordTextField.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let e = error {
-                    print(e)
-                    self.showErrorMessage(e)
+                if let errorE = error {
+                    print(errorE)
+                    self.showErrorMessage(errorE)
                 } else {
                     // This is to get the SceneDelegate object from your view controller
                     // then call the change root view controller function to change to main tab bar
@@ -48,7 +46,7 @@ extension RegisterViewController{
         }
     }
     
-    func showErrorMessage(_ error:Error){
+    func showErrorMessage(_ error:Error) {
         
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)

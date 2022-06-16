@@ -1,74 +1,59 @@
 //
-//  ProfileViewController.swift
+//  ProfileViewModel.swift
 //  Always-Chatting
 //
-//  Created by Fernando Tello on 16/04/22.
+//  Created by Fernando Tello on 14/06/22.
 //
 
-import UIKit
+import Foundation
 import Firebase
 
-class ProfileViewController: UIViewController {
-    
-    @IBOutlet weak var profilePhoto: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var fullnameLabel: UILabel!
-    
-    
-    @IBOutlet weak var photoCount: UILabel!
-    @IBOutlet weak var followerCount: UILabel!
-    @IBOutlet weak var followingCount: UILabel!
-    
-    @IBOutlet weak var uiViewShadow: UIView!
-    
-    var photoPath:String = ""
+protocol ProfileViewModelInput {
+    func loadProfilePhoto()
+    func loadProfileInfo()
+    func logout()
+}
+
+protocol ProfileViewModelOutput {
+    //    var profilePhoto: UIImageView
+    var description: String { get }
+    var fullname: String { get }
+    var photoCount: String { get }
+    var followerCount: String { get }
+    var followingCount: String { get }
+}
+
+protocol ProfileViewModel: ProfileViewModelInput,ProfileViewModelOutput {}
+
+final class DefaultProfileViewModel:ProfileViewModel {
+
+    // MARK: - OUTPUT
+    let description: String
+    let fullname: String
+    let photoCount: String
+    let followerCount: String
+    let followingCount: String
     
     let db = Firestore.firestore()
     let storage = Storage.storage()
     //    storage = Storage.storage(url:"gs://always-chatting.appspot.com")
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        profilePhoto.layer.borderWidth = 0.5
-        profilePhoto.layer.masksToBounds = false
-//        profilePhoto.layer.borderColor = UIColor.black.cgColor
-        profilePhoto.layer.cornerRadius = profilePhoto.frame.height/2
-        profilePhoto.clipsToBounds = true
-        
-        
-        // corner radius
-        uiViewShadow.layer.cornerRadius = 10
-
-        // border
-        uiViewShadow.layer.borderWidth = 1.0
-        uiViewShadow.layer.borderColor = UIColor.black.cgColor
-        uiViewShadow.backgroundColor = UIColor(named: "red")
-
-        // shadow
-        uiViewShadow.layer.shadowColor = UIColor.black.cgColor
-        uiViewShadow.layer.shadowOffset = CGSize(width: 3, height: 3)
-        uiViewShadow.layer.shadowOpacity = 0.7
-        uiViewShadow.layer.shadowRadius = 4.0
-        
-        // Do any additional setup after loading the view.
-        loadProfileInfo()
-    }
+    var photoPath:String = ""
     
-    
-    @IBAction func LogOutBtnPressed(_ sender: UIButton) {
-        logOut(sender)
+    init(profile: Profile) {
+        self.description = profile.description ?? ""
+        self.fullname = profile.fullname ?? ""
+        self.photoCount = profile.photoCount ?? ""
+        self.followerCount = profile.followerCount ?? ""
+        self.followingCount = profile.followingCount ?? ""
     }
-
 }
 
-
-// MARK: - Functions
-extension ProfileViewController {
-    
-    func loadProfilePhoto(){
+// MARK: - INPUT. View event methods
+extension DefaultProfileViewModel {
+    func loadProfilePhoto() {
+        
         let pathReference = storage.reference(withPath: photoPath)
-        print("******pathReference******* \(pathReference)")
         // Create a reference to the file you want to download
         //        let islandRef = pathReference.child(photoPath)
         
@@ -87,7 +72,7 @@ extension ProfileViewController {
         }
     }
     
-    func loadProfileInfo(){
+    func loadProfileInfo() {
         
         let docRef = db.collection("Users").document("yacM4GRjIFKXfEJRuUaz")
         
@@ -117,10 +102,11 @@ extension ProfileViewController {
         }
     }
     
-    func logOut(_ sender: UIButton) {
+    func logout() {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginNavController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
-
+        
         do {
             try Auth.auth().signOut()
             //            navigationController?.popToRootViewController(animated: true)
@@ -131,17 +117,5 @@ extension ProfileViewController {
             print ("Error signing out: %@", signOutError)
         }
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+

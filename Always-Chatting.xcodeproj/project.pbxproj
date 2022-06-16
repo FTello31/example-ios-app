@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED100491285BBAC300FF5CA5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED100490285BBAC300FF5CA5 /* Profile.swift */; };
 		ED191E4E283E9A5200291705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED191E4D283E9A5200291705 /* GoogleService-Info.plist */; };
 		ED191E51283E9C9900291705 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ED191E50283E9C9900291705 /* FirebaseAnalytics */; };
 		ED191E53283E9C9900291705 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ED191E52283E9C9900291705 /* FirebaseAuth */; };
 		ED191E55283E9C9900291705 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ED191E54283E9C9900291705 /* FirebaseFirestore */; };
 		ED191E57283E9C9900291705 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ED191E56283E9C9900291705 /* FirebaseStorage */; };
+		ED5D4C032859667600E6FDA0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D4C022859667600E6FDA0 /* ProfileViewModel.swift */; };
 		ED6F499027F402D700078080 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F498F27F402D700078080 /* RegisterViewController.swift */; };
 		ED6F499127F402D700078080 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F498F27F402D700078080 /* RegisterViewController.swift */; };
 		ED6F499227F402D700078080 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F498F27F402D700078080 /* RegisterViewController.swift */; };
@@ -50,7 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED100490285BBAC300FF5CA5 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		ED191E4D283E9A5200291705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED5D4C022859667600E6FDA0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		ED6F498F27F402D700078080 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		ED6F499327F402E300078080 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED8618E2280B595D007A8718 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -100,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED10048F285BBAB500FF5CA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED100490285BBAC300FF5CA5 /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ED191E4F283E9C6000291705 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +122,9 @@
 		ED3597E72856EF5A00443937 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				ED3597EE2856F77800443937 /* Controller */,
+				ED10048F285BBAB500FF5CA5 /* Model */,
+				ED5D4C052859678B00E6FDA0 /* ViewModel */,
+				ED5D4C042859674B00E6FDA0 /* View */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -167,12 +181,20 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		ED3597EE2856F77800443937 /* Controller */ = {
+		ED5D4C042859674B00E6FDA0 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				EDFD24B8280A92A500CE10CE /* ProfileViewController.swift */,
 			);
-			path = Controller;
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED5D4C052859678B00E6FDA0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED5D4C022859667600E6FDA0 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		ED6F498D27F4021B00078080 /* Model */ = {
@@ -247,6 +269,7 @@
 				EDB64E2827F2682D00AFFB02 /* Sources */,
 				EDB64E2927F2682D00AFFB02 /* Frameworks */,
 				EDB64E2A27F2682D00AFFB02 /* Resources */,
+				ED5D4C012859470600E6FDA0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -373,14 +396,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ED5D4C012859470600E6FDA0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EDB64E2827F2682D00AFFB02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EDFD24B9280A92A500CE10CE /* ProfileViewController.swift in Sources */,
+				ED100491285BBAC300FF5CA5 /* Profile.swift in Sources */,
 				EDB64E3427F2682D00AFFB02 /* ViewController.swift in Sources */,
 				EDBFD1F4280E1F42007169A7 /* ConversationViewController.swift in Sources */,
+				ED5D4C032859667600E6FDA0 /* ProfileViewModel.swift in Sources */,
 				EDB64E3027F2682D00AFFB02 /* AppDelegate.swift in Sources */,
 				EDB64E3227F2682D00AFFB02 /* SceneDelegate.swift in Sources */,
 				ED6F499427F402E300078080 /* LoginViewController.swift in Sources */,

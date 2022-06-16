@@ -19,16 +19,15 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
     @IBAction func btnLogingPressed(_ sender: UIButton) {
         login()
         
     }
 }
-//MARK: Functions
-extension LoginViewController{
+// MARK: Functions
+extension LoginViewController {
     
-    func login(){
+    func login() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
         
@@ -46,7 +45,7 @@ extension LoginViewController{
         //        }
     }
     
-    func showErrorMessage(_ error:Error){
+    func showErrorMessage(_ error:Error) {
         
         let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
@@ -65,6 +64,3 @@ extension LoginViewController{
      }
      */
 }
-
-
-

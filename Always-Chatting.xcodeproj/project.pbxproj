@@ -150,8 +150,8 @@
 		ED3597EA2856F02300443937 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				ED3597ED2856F76D00443937 /* Controller */,
 				ED6F498D27F4021B00078080 /* Model */,
+				ED3597ED2856F76D00443937 /* Controller */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
